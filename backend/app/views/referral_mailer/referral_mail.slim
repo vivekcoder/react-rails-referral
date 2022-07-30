@@ -1,0 +1,109 @@
+tr
+  td align="center" style=("padding: 0px 10px 0px 10px;")
+    table border="0" cellpadding="0" cellspacing="0" style=("max-width: 600px;") width="100%"
+      tr
+        td align="center" bgcolor="#ffffff" style=("padding: 30px 20px 0px 20px; border-radius: 4px 4px 0px 0px; color: #235c8e; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 30px; font-weight: 400; letter-spacing: 4px; line-height: 48px;") valign="top"
+          h1 style=("font-size: 30px; font-weight: 400; margin:2;")  Welcome!
+
+tr
+  td align="center" style=("padding: 0px 10px 0px 10px;")
+    table border="0" cellpadding="0" cellspacing="0" style=("max-width: 600px;") width="100%"
+      tr
+        td align="left" bgcolor="#ffffff" style=("padding: 20px 30px 0px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;" )
+          p style=("margin: 0;") = "You have been invited to a free trial of Finvisage’s FX Risk Management platform by #{@referral.user_name} ( #{@referral.referral_email} )."
+
+      - if @referral.email_body.present?
+        tr
+          td align="center" bgcolor="#ffffff" style=("padding: 0px 30px 10px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;" )
+            blockquote
+              p style=("margin: 0; font-style: italic; color: rgb(126, 150, 171)")
+                = simple_format(@referral.email_body, {}, wrapper_tag: "q")
+              footer style=("color: rgb(126, 150, 171)") = "- #{@referral.user_name}"
+
+      tr
+        td align="left" bgcolor="#ffffff" style=("padding: 0px 30px 10px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;" )
+          p style=("margin: 0;") Welcome
+
+          p style=("margin: 0;") Referral program is the future of technology.
+
+      tr
+        td align="left" bgcolor="#ffffff"
+          table border="0" cellpadding="0" cellspacing="0" width="100%"
+            tr
+              td align="center" bgcolor="#ffffff" style=("padding: 0px 30px 30px 30px;")
+                table border="0" cellpadding="0" cellspacing="0"
+                  tr
+                    td align="center" bgcolor="#235c8e"
+                      a href=="http://localhost:3002/(rid: @referral.id)" style=("font-size: 20px; font-family: Helvetica, Arial, sans-serif; color: #ffffff; text-decoration: none; color: #ffffff; text-decoration: none; padding: 10px 45px; display: inline-block;") target="_blank" Join
+
+      tr
+        td align="left" bgcolor="#ffffff" style=("padding: 20px 30px 20px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;" )
+          p style=("margin: 0;")
+           | Read more about us at &nbsp;
+
+      tr
+        td align="left" bgcolor="#ffffff" style=("padding: 0px 30px 40px 30px; border-radius: 0px 0px 4px 4px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 15px; font-weight: 400; line-height: 25px;" )
+          p style=("margin: 0;")
+            | Best regards,
+
+
+      tr
+        td align="left" bgcolor="#ffffff" style=("padding: 0px 30px 40px 30px; color: #666666; font-family: 'Lato', Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 400; line-height: 25px;" )
+          p style=("margin: 0;")
+            | If you're having trouble with the button above, copy and paste the URL below into your web browser.
+          p style=("margin: 0; color: #176096;") = "http://localhost:3002/(rid: @referral.id)"
+
+css:
+  blockquote {
+    margin: 0 auto;
+    padding: 1em;
+    border-left: 5px solid #999;
+  }
+  blockquote:before {
+    display: none;
+  }
+  blockquote:not(:first-of-type) {
+    margin-top: .5em;
+  }
+  blockquote p {
+    color: #555;
+    font-size: 12pt;
+    line-height: 1.4;
+    font-family: 'PT Serif', Cambria, 'Hoefler Text', Utopia, 'Liberation Serif', 'Nimbus Roman No9 L Regular', Times, 'Times New Roman', serif;
+  }
+  blockquote footer {
+    margin-top: .5em;
+    padding: 0;
+    color: #777;
+    font-size: 12pt;
+    text-align: left;
+    font-style: italic;
+  }
+  blockquote footer:before {
+    content: '— ';
+  }
+  blockquote:nth-of-type(even) {
+    text-align: right;
+    border-left: none;
+    border-right: 5px solid #999;
+  }
+  blockquote:nth-of-type(even) footer {
+    text-align: right;
+  }
+  blockquote:nth-of-type(even) footer:before {
+    content: '';
+  }
+  blockquote:nth-of-type(even) footer:after {
+    content: ' —';
+  }
+  @element 'blockquote' and (min-width: 300px) {
+    blockquote {
+      padding: 1em 20% 1em 1em;
+    }
+    blockquote p {
+      font-size: 14pt;
+    }
+    blockquote:nth-of-type(even) {
+      padding: 1em 1em 1em 20%;
+    }
+  }
