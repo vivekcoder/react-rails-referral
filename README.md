@@ -20,6 +20,17 @@ Run migrations.
 ### `rake db:migrate`
 
 Note: To send mails to the referred users, you need to setup the mailing credentials. Do this in the development.rb file.
+```
+config.action_mailer.smtp_settings = {
+    address:   'smtp.gmail.com',
+    domain:    'gmail.com',
+    port:      587,
+    user_name: <Email>,
+    password:  <Password>,
+    authentication: 'plain',
+    enable_starttls_auto: true
+ }
+ ```
 
 Finally, run the server on port 3001.
 `rails s -p 3001`
