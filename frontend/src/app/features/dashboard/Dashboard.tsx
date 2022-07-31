@@ -19,7 +19,7 @@ function Dashboard() {
   }
   return (
     <Grid>
-      <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "5% auto" }}>
+      <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "20px auto" }}>
         <ReferralForm onUpdateList={onUpdateList}/>
         <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "5% auto" }}>
           <ReferralList referrals={referrals} />

@@ -35,7 +35,7 @@ function ReferralForm(props: any) {
       email: currentUser?.email
     };
 
-    // addReferralHandler(referral);
+    addReferralHandler(referral);
     props.onUpdateList(referral);
     nameRef.current.value = '';
     emailRef.current.value = '';
@@ -46,12 +46,18 @@ function ReferralForm(props: any) {
     <Grid>
       <Card style={{ maxWidth: 450, padding: "20px 5px", margin: "0" }}>
         <CardContent>
-          <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
+          <Typography align="center" variant="h5" color="textSecondary" component="p" gutterBottom>
+            Liked our program?
+            <br/>
+            Refer your friends.
           </Typography>
           <form onSubmit={submitHandler}>
             <Grid container spacing={1}>
               <Grid item xs={12}>
                 <TextField type="email" placeholder="Enter email" label="Email" variant="outlined" fullWidth required inputRef={emailRef}/>
+                <Typography variant="body2" color="textSecondary" component="p" gutterBottom>
+                  Invite will be sent on this email.
+                </Typography>
               </Grid>
               <Grid item xs={12}>
                 <TextField placeholder="Enter name" label="Name" variant="outlined" fullWidth required inputRef={nameRef} />
