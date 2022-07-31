@@ -3,7 +3,7 @@
 class Referral < ApplicationRecord
   belongs_to :user
 
-  # after_create_commit :send_email
+  after_create_commit :send_email
 
   private
   def send_email
